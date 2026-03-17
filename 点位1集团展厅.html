@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <!-- 适配手机屏幕 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>集团展厅 - 校园语音讲解</title>
+    <style>
+        /* 简单美化，适配手机 */
+        body {
+            text-align: center;
+            padding: 50px 20px;
+            font-family: "微软雅黑";
+        }
+        audio {
+            width: 100%;
+            max-width: 400px;
+            margin-top: 20px;
+        }
+        h1 {
+            color: #333;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <h1>集团展厅 - 校园语音讲解</h1>
+    <!-- 音频播放核心代码 -->
+    <audio id="audioPlayer" controls autoplay>
+        <!-- 替换为你的音频直链 -->
+        <source src="https://github.com/vixenly/vixenly/raw/refs/heads/main/%E5%AD%A6%E7%94%9F%E4%B8%8E%E5%AE%B6%E9%95%BF%E6%9C%8D%E5%8A%A1%E4%B8%AD%E5%BF%831.mp3" type="audio/mpeg">
+        你的浏览器不支持音频播放，请更换浏览器重试。
+    </audio>
+
+    <script>
+        // 自动播放兼容（解决部分手机浏览器需要手动触发的问题）
+        const audio = document.getElementById('audioPlayer');
+        // 点击页面任意位置也能触发播放
+        document.addEventListener('click', () => {
+            audio.play();
+        });
+        // 监听播放错误，提示用户
+        audio.addEventListener('error', () => {
+            alert('音频加载失败，请检查网络或重试');
+        });
+    </script>
+</body>
+</html>
